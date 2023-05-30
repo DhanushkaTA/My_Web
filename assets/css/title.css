@@ -1,0 +1,19 @@
+.title{
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 5vw;
+    color: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,.5);
+    margin-top: 0;
+    margin-bottom: 0;
+    width: max-content;
+}
+
+.title h1{
+    margin: 0 0;
+}
+
+.imgCv{
+    width: 22vw;
+    height: 30vw;
+}

@@ -1,0 +1,207 @@
+.home{
+    background-color: black;
+    height: calc(100vh - 60px);
+
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+}
+
+.txtContainer{
+    position: relative;
+    bottom: -1%;
+    height: 70%;
+    z-index: 1;
+    /*border: 2px solid #14dc2f;*/
+    padding-left: 1%;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.first h1{
+    display: block;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: calc(5vw + 4px);
+    letter-spacing: 0.3rem;
+    padding-left: 6.5%;
+    color: white;
+}
+
+.sec h1{
+    display: block;
+    margin-top:0.05rem;
+    margin-bottom:0.05rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: calc(2vw + 8px);
+    padding-left: 6.5%;
+    color: white;
+    text-transform: uppercase;
+    /*font-weight: 100;*/
+}
+
+.shineText{
+    display: block;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: calc(7vw );
+    /*letter-spacing: 0.3rem;*/
+    font-style: italic;
+    /*color: #ffffffc7;*/
+    opacity: 1;
+    padding-left: 1%;
+    text-transform: uppercase;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,.2);
+}
+
+.border{
+    border: 5px solid #F3062E;
+    width: 80vw;
+}
+
+.imgBox{
+    position: absolute;
+    /*height: 100vh;*/
+    width: 120vh;
+    right: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imgBox img{
+    /*position: relative;*/
+    width: 90%;
+    background-size:cover;
+    background-position:center;
+    /*animation: animateUser 4s linear infinite;*/
+}
+
+.socialMedia{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 3vh;
+    padding-left: 1rem;
+}
+
+.socialMedia a{
+    font-size: 2vw;
+    padding-right: 1rem;
+    color: #F3062E;
+    /*transition: color 0.8s ease;*/
+}
+
+.socialMedia a:hover{
+    /*margin-right: 40px;*/
+    color: white;
+    /*text-shadow: 0 0 10px #F3062E,*/
+    /*             0 0 20px #F3062E,*/
+    /*             0 0 40px #F3062E,*/
+    /*             0 0 80px #F3062E,*/
+    /*             0 0 120px #F3062E;*/
+    text-shadow: 0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 40px #ffffff,
+    0 0 80px #ffffff,
+    0 0 120px #ffffff;
+}
+
+/**  -------------------CV Download Button------------------------ */
+
+.btnCover{
+    display: inline-block;
+}
+.cvBtn{
+    /*width: 10vw;*/
+    height: 3rem;
+    color: white;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: 4px 6px;
+    border: 2px solid green;
+}
+
+.cvBtn:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 2px solid white;
+    animation: border-top 3s infinite alternate;
+}
+
+.wrapper{
+    margin-left: 6.5%;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.welcome{
+    background-color: #F2062E;
+    color: white;
+    padding: 10px;
+    width: max-content;
+    font-size: 1em;
+    letter-spacing: 10px;
+}
+
+.arrow{
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    /*border-top: 20px solid #f00;*/
+    border-top: 20px solid #F2062E;
+    margin-left: 30%;
+}
+
+
+::-webkit-scrollbar{
+    width: 1vw;
+    background-color: #363131;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: crimson;
+}
+
+@keyframes border-top {
+    0%{width: 0px; height: 0px}
+    100%{width: 100px; height: 0px}
+}
+
+@keyframes animateUser {
+    50%{
+        right: 30px;
+        top: -50px;
+    }
+}
+
+@keyframes animate {
+
+    0%{
+        background-position: -500%;
+    }
+
+    100%{
+        background-position: 500%;
+    }
+}
