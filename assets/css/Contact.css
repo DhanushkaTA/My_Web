@@ -1,0 +1,219 @@
+.contact{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contactContainer {
+    margin: 30px 2vw;
+    width: 100%;
+
+    position: relative;
+}
+
+.contactContainer .contactTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form{
+    grid-area: form;
+}
+.map{
+    grid-area: map;
+}
+
+.info{
+    grid-area: info;
+    padding: 15px!important;
+}
+
+.contact .box{
+    background-color: white;
+    padding: 40px;
+}
+
+.wrapperBox{
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas: "form map" "form info";
+    grid-gap: 20px;
+}
+
+
+
+.formWrapper{
+    position: relative;
+    width: 100%;
+}
+
+.formWrapper .row1 , .formWrapper .row2{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*.row3,.row4,.row2{*/
+/*    margin-top: 10px;*/
+/*}*/
+
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    /*flex-wrap: wrap;*/
+}
+
+.row3 .inputContainer , .row4  .inputContainer{
+    width: 100%;
+}
+
+.inputContainer label{
+    color: #e91e63;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.inputContainer input{
+    padding: 10px;
+    outline: none;
+}
+
+.inputContainer input:not(#submitBtn){
+    /*border: 1px solid #e91e63;*/
+}
+
+.inputContainer textarea{
+    padding: 10px;
+    outline: none;
+    /*border: 1px solid #e91e63;*/
+    resize: none;
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+#submitBtn{
+    padding: 10px;
+    width: max-content;
+    background-color: #F3062E;
+    border: none;
+    color: white;
+}
+
+
+.info{
+    /*background: transparent;*/
+    background-color: rgba(255, 255, 255, 0.3)!important;
+}
+
+.infoBox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.infoBox p,.infoBox a:not(.socialMediaItem a){
+    color: white;
+    text-decoration: none;
+}
+
+.infoBox div>span{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    font-size: 20px;
+}
+
+
+
+.infoBox div>p{
+    margin: 0;
+}
+
+
+/*.contact .socialMediaItem ul{*/
+/*    display: flex;*/
+/*    color: #e91e63;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.contact .socialMediaItem li{*/
+/*    height: 40px;*/
+/*    width: 40px;*/
+/*    background-color: rgba(255, 255, 255, 0.2);*/
+/*    !*margin-right: 10px;*!*/
+/*    text-align: center;*/
+/*    line-height: 40px;*/
+/*    border-radius: 50%;*/
+/*    transition: all 0.5s ease;*/
+/*    font-size: 20px;*/
+/*}*/
+
+.map{
+    padding: 0!important;
+}
+
+.map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media all and (max-width: 970px){
+    .inputContainer{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 900px){
+
+    /*.formWrapper .row1 , .formWrapper .row2{*/
+    /*    flex-wrap: nowrap;*/
+    /*}*/
+
+    .inputContainer{
+        width: 49%;
+    }
+
+    .wrapperBox{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "form" " map" "info";
+        grid-gap: 20px;
+    }
+
+    .map{
+        min-height: 300px;
+    }
+
+    .contactContainer {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media all and (max-width: 608px){
+    .inputContainer{
+        width: 100%;
+    }
+
+    .form{
+        padding: 10px!important;
+    }
+    .info{
+        padding: 0!important;
+    }
+}

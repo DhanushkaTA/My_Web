@@ -81,6 +81,7 @@
     cursor: pointer;
     color: #181818;
     background-color: white;
+    rotate: 360deg;
 }
 
 .footerItem ul li{
