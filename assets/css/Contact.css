@@ -20,9 +20,11 @@
 
 .form{
     grid-area: form;
+    background-color: white;
 }
 .map{
     grid-area: map;
+    background-color: white;
 }
 
 .info{
@@ -31,7 +33,6 @@
 }
 
 .contact .box{
-    background-color: white;
     padding: 40px;
 }
 
@@ -57,11 +58,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-/*.row3,.row4,.row2{*/
-/*    margin-top: 10px;*/
-/*}*/
-
 
 .inputContainer{
     display: flex;
@@ -109,8 +105,8 @@
 
 
 .info{
-    /*background: transparent;*/
-    background-color: rgba(255, 255, 255, 0.3)!important;
+    background: transparent!important;
+    /*background-color: rgba(255, 255, 255, 0.3)!important;*/
 }
 
 .infoBox div{
@@ -143,25 +139,6 @@
     margin: 0;
 }
 
-
-/*.contact .socialMediaItem ul{*/
-/*    display: flex;*/
-/*    color: #e91e63;*/
-/*    flex-wrap: wrap;*/
-/*}*/
-
-/*.contact .socialMediaItem li{*/
-/*    height: 40px;*/
-/*    width: 40px;*/
-/*    background-color: rgba(255, 255, 255, 0.2);*/
-/*    !*margin-right: 10px;*!*/
-/*    text-align: center;*/
-/*    line-height: 40px;*/
-/*    border-radius: 50%;*/
-/*    transition: all 0.5s ease;*/
-/*    font-size: 20px;*/
-/*}*/
-
 .map{
     padding: 0!important;
 }
@@ -179,10 +156,6 @@
 }
 
 @media all and (max-width: 900px){
-
-    /*.formWrapper .row1 , .formWrapper .row2{*/
-    /*    flex-wrap: nowrap;*/
-    /*}*/
 
     .inputContainer{
         width: 49%;
