@@ -77,6 +77,12 @@
     font-size: 20px;
 }
 
+.socialMediaItem li a{
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+.socialMediaItem li:hover a,
 .socialMediaItem li:hover{
     cursor: pointer;
     color: #181818;
@@ -84,11 +90,16 @@
     rotate: 360deg;
 }
 
-.footerItem ul li{
-    color: #bbbbbb;
-    transition: all 0.3s ease;
+.footerItem ul li {
+
     display: block;
-    width: max-content;
+    /*width: max-content;*/
+    transition: all 0.3s linear ;
+}
+
+.footerItem ul li a{
+    text-decoration: none;
+    color: #bbbbbb;
 }
 
 .footerItem ul li:not(:last-child){

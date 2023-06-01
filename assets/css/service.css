@@ -13,7 +13,7 @@
     /*margin: 50px 0px 0px;*/
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
     position: relative;
 }
 
@@ -36,12 +36,20 @@
     height: 350px;
     border-radius: 10px;
     transition: all 0.5s ease;
+    color: #b4b4b4;
 }
 
 .card:hover{
     border: 1px solid crimson;
     background-color: rgba(220, 20, 60, 0.55);
     cursor: pointer;
+
+    box-shadow: 0 0 10px #F3062E,
+                 /*0 0 20px #F3062E,*/
+                 /*0 0 40px #F3062E,*/
+                 /*0 0 80px #F3062E,*/
+                 0 0 120px #F3062E;
+    z-index: 500;
 }
 
 .icon{

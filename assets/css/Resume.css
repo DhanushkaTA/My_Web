@@ -22,12 +22,12 @@
 
 
 
-.container-timeLine h2,
-.container-timeLine small,
-.container-timeLine p{
-    margin: 0;
-    padding: 0;
-}
+/*.container-timeLine h2,*/
+/*.container-timeLine small,*/
+/*.container-timeLine p{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
 
 @keyframes moveDown {
     0%{

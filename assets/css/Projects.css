@@ -62,7 +62,37 @@
     color: rgba(255, 255, 255, 0.47);
     font-size: 25px;
     margin: 5px;
+    position: relative;
 }
+
+.cardP a{
+    position: relative;
+}
+
+
+/*.cardP a i::after{*/
+/*    content: ;*/
+/*    !*background: #DC143C;*!*/
+/*    color: #DC143C;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    position: absolute;*/
+/*    !*top: 0;*!*/
+/*    !*right: 0;*!*/
+/*    !*left: 0;*!*/
+/*    !*z-index: 600;*!*/
+/*    !*animation: iconAnimetion 3s linear forwards;*!*/
+/*}*/
+
+/*@keyframes iconAnimetion {*/
+/*    0%{*/
+/*        height: 0%;*/
+/*    }*/
+
+/*    100%{*/
+/*        height: 100%;*/
+/*    }*/
+/*}*/
 
 .iconContainer{
     display: flex;
