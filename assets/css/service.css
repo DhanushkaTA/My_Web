@@ -39,7 +39,7 @@
     color: #b4b4b4;
 }
 
-.card:hover{
+.card:hover {
     border: 1px solid crimson;
     background-color: rgba(220, 20, 60, 0.55);
     cursor: pointer;
@@ -50,6 +50,15 @@
                  /*0 0 80px #F3062E,*/
                  0 0 120px #F3062E;
     z-index: 500;
+
+}
+
+.card:hover p{
+    background-image: linear-gradient(to left,#DC1D9D,#F03D7E,#F24774,#F34E70,#F9665F,#FC795B,#FF8C5F);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .icon{
