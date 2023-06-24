@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POS System</title>
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+    <style>
+        .nav:hover{
+            color: green !important;
+        }
+
+        /*main{*/
+        /*    border: 1px solid crimson;*/
+        /*}*/
+         .new{
+             background-color: #54a946 !important;
+             color: white!important;
+         }
+        .new:hover{
+            background-color: #22FF00!important;
+            color: white!important;
+        }
+
+        .up{
+            background-color: #FFD43B;
+            color: white!important;
+        }
+        .up:hover{
+            background-color: #FFFF00;
+            color: white!important;
+        }
+        input:focus:not(#cusSearch,#itemSearch){
+            background-color: #CEE1F4!important;
+            border: 1px solid #0078D7 !important;
+        }
+
+        .searchBox{
+            background-color: #faf794 !important;
+            border: 1px solid #ffe900 !important;
+        }
+
+        .cleanBtn{
+            background-color: #0a53be;
+            color:white;
+        }
+
+        .cleanBtn:hover{
+            background-color: #2b66bd;
+            color: #000000;
+        }
+
+        body{
+            background-color: #F0F1F3;
+        }
+
+        body>main>section{
+            background-color: #F0F1F3;
+        }
+
+        body>main>section>div:nth-child(1){
+            background-color: #ffffff;
+            /*border: 1px solid black;*/
+            /*border-radius: 0%;*/
+        }
+
+        label{
+            font-weight: bolder;
+        }
+
+        .new{
+            background-color: #22FF00!important;
+            color: white!important;
+        }
+        #oChang{
+            border: 1px solid #22FF00;
+            background-color: rgba(34, 255, 0, 0.5) !important;
+            color: #1abe01 !important;
+        }
+        #oFinalTotal{
+            border: 1px solid red;
+            background-color: rgb(255, 0, 0, 0.5) !important;
+            color: red!important;
+        }
+        #red{
+            border: 1px solid red;
+            background-color: rgb(255, 0, 0, 0.5) !important;
+            color: red!important;
+        }
+
+        .head{
+            background-color: #FFD43B!important;
+            color: white;!important;
+        }
+        #lblYear,#lblToday{
+            color: #2fa152 !important;
+        }
+        #customerCard{
+            background-color: #0E0052!important;
+            color: white;
+        }
+        #itemCard{
+            background-color: #300043!important;
+            color: white;
+        }
+        #orderCard{
+            background-color: #F3062E!important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!---------------------------Navbar End ---------------------------------------->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark tbl" data-bs-theme="dark">
+
+    <div class="container-fluid">
+        <a class="navbar-brand text-uppercase fw-bolder  nav" href="#" id="logoBtn">POS System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item" id="homeBtn">
+                    <a class="nav-link active nav" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item" id="customerBtn">
+                    <a class="nav-link active nav" aria-current="page" href=#" >Customer</a>
+                </li>
+                <li class="nav-item" id="itemBtn">
+                    <a class="nav-link active nav" aria-current="page" href="#">Item</a>
+                </li>
+                <li class="nav-item" id="orderBtn">
+                    <a class="nav-link active nav" aria-current="page" href="#">Order</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!--------------------------- Navbar End ---------------------------------------->
+
+<!--------------------------- Home Start ---------------------------------------->
+
+<main class="container-fluid mt-2" >
+
+    <!------------    main row -------------->
+    <section id="home">
+
+        <!------------    card col -------------->
+        <div >
+
+            <!------------    card col>row -------------->
+            <div class="row justify-content-sm-around">
+
+                <!------------    card col>row>col 1 -------------->
+                <div class="col-12 col-sm-3 mt-3 mt-sm-0">
+
+                    <div id="customerCard" class="card " style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title fs-3">Customers<span class="fs-6">/by today</span></h5>
+                            <p id="lblCustomer" class="card-text fs-1 fw-bolder lh-lg text-center">10</p>
+<!--                            <a href="#" class="btn btn-primary">View</a>-->
+                        </div>
+                    </div>
+
+                </div>
+                <!------------    card col>row>col 1 End-------------->
+                <!------------    card col>row>col 2 -------------->
+                <div class="col-12 col-sm-3 mt-3 mt-sm-0">
+
+                    <div id="itemCard" class="card " style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title fs-3">Items<span class="fs-6">/by today</span></h5>
+                            <p id="lblItem" class="card-text fs-1 fw-bolder lh-lg text-center">10</p>
+<!--                            <a href="#" class="btn btn-primary">View</a>-->
+                        </div>
+                    </div>
+
+                </div>
+                <!------------    card col>row>col 2 End-------------->
+                <!------------    card col>row>col 3 -------------->
+                <div class="col-12 col-sm-3 mt-3 mt-sm-0">
+
+                    <div id="orderCard" class="card " style="width: 100%;">
+                        <div class="card-body ">
+                            <h5 class="card-title fs-3">Orders<span class="fs-6">/by today</span></h5>
+                            <p id="lblOrder" class="card-text fs-1 fw-bolder lh-lg text-center">10</p>
+<!--                            <a href="#" class="btn btn-primary">View</a>-->
+                        </div>
+                    </div>
+
+                </div>
+                <!------------    card col>row>col 3 End -------------->
+            </div>
+            <!------------    card col>row End -------------->
+
+            <div class="row justify-content-sm-around">
+
+                <div class="col-12 col-sm-4 mt-4 ">
+                    <div class="card" style="width:100%">
+                        <div class="card-body">
+                            <h5 class="card-title">This Year Income</h5>
+                            <h1><i class="fa-solid fa-landmark"></i> RS.</h1>
+                            <p id="lblYear" class="fw-bolder fs-1 lh-lg">4564654</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4 mt-4">
+                    <div class="card" style="width:100%">
+                        <div class="card-body">
+                            <h5 class="card-title ">This Month Income</h5>
+                            <h1><i class="fa-solid fa-landmark"></i> RS.</h1>
+                            <p id="lblToday" class="fw-bolder fs-1 lh-lg">4564654</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!------------    card col End -------------->
+        <!--        <div></div>-->
+
+    </section>
+    <!------------    main row End-------------->
+
+
+    <!------------    Start Customer  -------------->
+
+    <section id="customer">
+
+        <section class="container-fluid">
+
+            <div  class="row mt-2">
+
+                <div class="col-12">
+                    <h3><i class="fa-solid fa-users"></i> Customer Manager</h3>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <!------------------  row1>col Form Start --------------------->
+                <div class="col-12 col-sm-12 col-md-6">
+
+                    <div class="mb-3 row">
+                        <label for="cusSearch" class="col-form-label">Search Customer</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control searchBox" id="cusSearch" placeholder="Enter customer ID here">
+                        </div>
+                        <div class="col-12 col-sm-3 mt-2 m-sm-0">
+                            <button type="button" id="customerSearchBtn" class="btn btn-success w-100">Search</button>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="row justify-content-end pe-0">
+                            <div class="col-12 col-sm-3 m-sm-0  p-sm-0 ps-sm-4">
+                                <!--                            <button type="button" class="btn btn-danger w-100">Add New</button>-->
+
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger w-100 new border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-plus"></i> New
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New CustomerDto Form</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body container-fluid">
+
+                                                <div class="row mt-3">
+
+                                                    <div class="col-12">
+
+                                                        <div class="row">
+                                                            <!--------------------ID--------------------->
+                                                            <div class="col-12 ">
+                                                                <div class="mb-3 row justify-content-between">
+                                                                    <label for="customerIdNew" class="col-sm-2 col-form-label">ID</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="customerIdNew">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--------------------Name--------------------->
+                                                            <div class="col-12 ">
+                                                                <div class="mb-3 row justify-content-between">
+                                                                    <label for="customerNameNew" class="col-sm-2 col-form-label">Name</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="customerNameNew">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--------------------Address--------------------->
+                                                            <div class="col-12 ">
+                                                                <div class="mb-3 row justify-content-between">
+                                                                    <label for="customerAddressNew" class="col-sm-2 col-form-label">Address</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" class="form-control" id="customerAddressNew">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--------------------Contact--------------------->
+                                                            <div class="col-12 ">
+                                                                <div class="mb-3 row column-gap-lg-4 justify-content-between ">
+                                                                    <label for="customerContactNew" class="col-sm-2  col-form-label ">Contact</label>
+                                                                    <div class="col-sm-8 ">
+                                                                        <input type="text" class="form-control" id="customerContactNew">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <!------------------------Form End (id nam ...)---------------------------->
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button id="btnCustomerSave" type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add.</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="customerId" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="customerId">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="customerName" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="customerName">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="customerAddress" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="customerAddress">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="customerContact" class="col-sm-2 col-form-label">Contact</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="customerContact">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="row justify-content-end pe-sm-0-0">
+                            <div class="col-12 col-sm-3 m-sm-0">
+                                <button id="btnCustomerUpdate" type="button" class="btn up w-100"><i class="fa-solid fa-arrows-rotate"></i> Update</button>
+                            </div>
+                            <div class="col-12 col-sm-3 m-sm-0 ">
+                                <button id="customerClearBtn" type="button" class="btn cleanBtn w-100"><i class="fa-solid fa-brush"></i> Clear</button>
+                            </div>
+                            <div class="col-12 col-sm-3 m-sm-0 p-sm-0 mt-2 mt-sm-0">
+                                <button id="btnCustomerDelete" type="button" class="btn btn-danger w-100"><i class="fa-solid fa-trash"></i> Delete</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!------------------  row1>col Form End    --------------------->
+                <!------------------  row2>col Table Start --------------------->
+                <div class="col-12 col-sm-12 col-md-6">
+
+                    <table id="tableCustomer" class="table table-bordered  table-hover ">
+                        <thead class="table-dark">
+                        <tr>
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Address</td>
+                            <td>Contact</td>
+                        </tr>
+                        </thead>
+
+                        <tbody class="table-success">
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <!------------------  row2>col Table End --------------------->
+            </div>
+
+        </section>
+
+    </section>
+
+    <!------------------------------Customer form End----------------------------------->
+
+    <!------------------------------Item form Start----------------------------------->
+
+    <section id="item" class="container-fluid mt-2">
+
+        <section class="row justify-content-center">
+
+            <div id="log" class="row mt-1 mb-2">
+
+                <div class="col-12">
+                    <h3><i class="fa-brands fa-shopify"></i> Item Manager</h3>
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-11 col-lg-10 p-2 rounded border border-dark">
+
+                <!------------------------row 01(Search box)---------------------------->
+                <div class="row ">
+
+                    <div class="col-12 mt-2">
+
+                        <div class="row justify-content-md-between ">
+                            <div class="col-12 col-md-2 text-center text-capitalize ">
+                                <label for="itemSearch" class="col-form-label fw-bolder ">Search Here</label>
+                            </div>
+                            <div class="col-12 col-md-6  ">
+                                <input type="text" class="form-control searchBox" id="itemSearch" placeholder="Enter Item Id here">
+                            </div>
+                            <div class="col-12 col-md-2 mt-2 mt-md-0">
+                                <button type="button" id="itemSearchBtn" class="btn btn-success w-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------row 01 End (Search box)---------------------------->
+
+                <!------------------------row 02(Add new)---------------------------->
+                <div class="row justify-content-md-end mt-2">
+
+                </div>
+                <!------------------------row 02 End (Add new)---------------------------->
+
+                <!------------------------row 03(id name )---------------------------->
+                <div class="row mt-3">
+
+                    <div class="col-12">
+
+                        <div class="row">
+                            <!--------------------ID--------------------->
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <div class="mb-3 row justify-content-between">
+                                    <label for="itemId" class="col-sm-2 col-form-label">Item ID</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="itemId">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------Des--------------------->
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <div class="mb-3 row justify-content-between">
+                                    <label for="itemDes" class="col-sm-2 col-form-label">Description</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="itemDes">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------Price--------------------->
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <div class="mb-3 row justify-content-between">
+                                    <label for="itemPrice" class="col-sm-2 col-form-label">Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="itemPrice">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--------------------Qty--------------------->
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <div class="mb-3 row justify-content-between">
+                                    <label for="itemQtyOnHand" class="col-sm-2 col-form-label">Qty.OnHand</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="itemQtyOnHand">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!------------------------row 03 End (id nam ...)---------------------------->
+                <!------------------------row 04 Start (Buttons)---------------------------->
+
+                <div class="row justify-content-md-end">
+
+                    <div class="btn-group col-md-12 col-lg-4 " role="group" aria-label="Basic mixed styles example">
+                        <button id="itemAddBtn" type="button" class="btn btn-success "><i class="fa-solid fa-plus"></i>   Add</button>
+                        <button id="itemDeleteBtn" type="button" class="btn btn-danger "><i class="fa-solid fa-trash"></i> Delete</button>
+                        <button id="itemUpdateBtn" type="button" class="btn btn-warning "><i class="fa-solid fa-arrows-rotate"></i> Update</button>
+                        <button id="itemClearBtn" type="button" class="btn cleanBtn"><i class="fa-solid fa-brush"></i> Clear</button>
+                    </div>
+
+                </div>
+                <!------------------------row 04 End (Buttons)---------------------------->
+            </div>
+            <!------------------------col 1 End (Form)---------------------------->
+
+            <div class="col-12 col-md-11 col-lg-10 mt-5">
+
+                <table id="itemTable" class="table table-bordered  table-hover ">
+                    <thead class="table-dark">
+                    <tr>
+                        <td>ID</td>
+                        <td>Description</td>
+                        <td>Price</td>
+                        <td>Qty</td>
+                    </tr>
+                    </thead>
+
+                    <tbody class="table-success">
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <!------------------------------Item form End----------------------------------->
+
+    <!------------------------------Order form Start----------------------------------->
+
+    <section id="order" class="container-fluid">
+
+        <section class="row mt-2 align-items-center column-gap-2 justify-content-around">
+            <!------------------------------Order Details Start---------------------------------------->
+            <div class="col-12 col-lg-4 border border-dark rounded">
+                <div class="row">
+                    <div class="col-12 bg-success fs-4 fw-bold text-center head rounded-top-1">
+                        <i class="fa-solid fa-bag-shopping"></i> Order Details
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6 mt-2">
+                        <label for="orderId" class="form-label">Order ID</label>
+                        <label class="form-control" id="orderId" ></label>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6 mt-2">
+                        <label for="orderDate" class="form-label">Order Date</label>
+                        <label  class="form-control" id="orderDate" ></label>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6">
+                        <label for="customerId" class="form-label">Customer ID</label>
+                        <select class="form-select searchBox" id="customerIdCmb" aria-label="Floating label select example">
+                            <option selected>Choose Customer</option>
+
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6">
+                        <label for="customerName" class="form-label">Customer Name</label>
+                        <input type="text" class="form-control" id="cusNameOrder" >
+                    </div>
+
+<!--                    <div class="col-12 col-md-12 mt-2 mt-md-0 mb-1">-->
+<!--                        <button id="resetBtn" type="button" class="btn btn-success w-100"><i class="fa-solid fa-paint-brush"></i> Reset</button>-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+            <!------------------------------Order Details End---------------------------------------->
+            <!------------------------------Item Details Start---------------------------------------->
+            <div class="col-12 col-lg-4 rounded border border-dark mt-3 mt-sm-2">
+                <div class="row">
+
+                    <div class="col-12 bg-success fs-4 fw-bold text-center head rounded-top-1">
+                        <i class="fa-sharp fa-solid fa-cart-flatbed"></i> Item Details
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6 mt-2">
+                        <label for="itemId" class="form-label">Item ID</label>
+                        <select class="form-select searchBox" id="itemIdCmb" aria-label="Floating label select example">
+                            <option selected>Choose Item</option>
+
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6 mt-2">
+                        <label for="itemQtyOnHandOrder" class="form-label">QtyOnHand</label>
+                        <input type="text" class="form-control" id="itemQtyOnHandOrder" >
+                    </div>
+
+                    <div class="mb-3 col-12 ">
+                        <label for="itemDes" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="itemDesOrder">
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6">
+                        <label for="itemPrice" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="itemPriceOrder" >
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-6">
+                        <label for="itemQtyOrder" class="form-label">Qty</label>
+                        <input type="text" class="form-control" id="itemQtyOrder" >
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-4">
+                        <button id="orderAddBtn" type="button" class="btn btn-success w-100 mt-0">Add</button>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-4">
+                        <button id="orderRemoveBtn" type="button" class="btn btn-danger w-100 ">Remove</button>
+                    </div>
+
+                    <div class="mb-3 col-12 col-sm-4">
+                        <button id="resetBtn" type="button" class="btn cleanBtn w-100 ">Reset</button>
+                    </div>
+
+<!--                    <div class="col-12 col-md-12 mt-2 mt-md-0 mb-1">-->
+<!--                        <button id="orderAddBtn" type="button" class="btn btn-success w-100">Add</button>-->
+<!--                        <button id="orderRemoveBtn" type="button" class="btn btn-danger w-100 mt-1">Remove</button>-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+            <!------------------------------Item Details End---------------------------------------->
+            <!------------------------------Payment Details Start---------------------------------------->
+            <div class="col-12 col-lg-3 border border-dark mt-3 mt-sm-2 rounded">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 bg-success fs-4 fw-bold text-center head rounded-top-1">
+                        <i class="fa-solid fa-money-check-dollar"></i> Payment Details
+                    </div>
+
+                    <div class="mb-1 col-6 fs-2">
+                        <label  class="form-label">Total</label>
+                    </div>
+
+                    <div class="mb-1 col-6 fs-2">
+                        <label id="total" class="form-label">00.00</label>
+                    </div>
+
+                    <div class="mb-2 col-12 ">
+                        <label for="discountTxt" class="form-label">Discount</label>
+                        <input type="number" class="form-control" id="discountTxt" >
+                    </div>
+
+                    <div class="col-11 mb-1 text-center p-1 fs-2 fw-bold border border-danger rounded" id="red">
+                        <div class="row">
+                            <label class="form-label col-12">Sub Total</label>
+                            <label class="form-label col-12 mt-1" id="fTotal">00.00</label>
+                        </div>
+                    </div>
+
+<!--                    <div class="mb-3 col-12 col-sm-4 w-50">-->
+<!--                        <button id="placeOrderBtn" type="button" class="btn btn-success w-100"><i class="fa-solid fa-money-check-dollar"></i> Place Order</button>-->
+<!--                    </div>-->
+
+                    <div class="mb-3 col-12 col-sm-4 w-50">
+                        <!-- Button trigger modal -->
+                        <button id="placeOrderBtn" type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <i class="fa-solid fa-money-check-dollar"></i> Place Order
+                        </button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Place Order</h1>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="container-fluid">
+                                        <div class="row justify-content-between">
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oId" class="form-label">Order Id</label>
+                                                <label class="form-control" id="oId" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oDate" class="form-label">Order Date</label>
+                                                <label class="form-control" id="oDate" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oCusId" class="form-label">Customer ID</label>
+                                                <label class="form-control" id="oCusId" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oCusName" class="form-label">Customer Name</label>
+                                                <label class="form-control" id="oCusName" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oItmCount" class="form-label">Item Count</label>
+                                                <label class="form-control" id="oItmCount" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oDiscount" class="form-label">Discount</label>
+                                                <label class="form-control" id="oDiscount" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oTotal" class="form-label">Total</label>
+                                                <label class="form-control" id="oTotal" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-12 col-sm-6">
+                                                <label for="oFinalTotal" class="form-label">Sub Total</label>
+                                                <label class="form-control" id="oFinalTotal" ></label>
+                                            </div>
+
+                                            <div class="mb-3 col-6 ">
+                                                <label for="oChang" class="form-label">Cash</label>
+                                                <input type="number" class="form-control" id="oCash" >
+                                            </div>
+
+                                            <div class="mb-3 col-6 ">
+                                                <label for="oChang" class="form-label">Balance</label>
+                                                <label class="form-control" id="oChang" ></label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button id="conformBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Conform</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 col-12 col-sm-4 w-50">
+                        <button id="cancelOrderBtn" type="button" class="btn btn-danger w-100"><i class="fa-solid fa-cancel"></i> Cancel Order</button>
+                    </div>
+
+<!--                    <div class="col-12 col-md-12 mt-2 mt-md-0 mb-1">-->
+<!--                        <button id="placeOrderBtn" type="button" class="btn btn-success w-100"><i class="fa-solid fa-money-check-dollar"></i> Place Order</button>-->
+<!--                        <button id="cancelOrderBtn" type="button" class="btn btn-danger w-100 mt-1"><i class="fa-solid fa-cancel"></i> Cancel Order</button>-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+            <!------------------------------Payment Details End---------------------------------------->
+        </section>
+
+        <section class="row justify-content-center">
+
+            <div class="col-12 col-md-11 col-lg-10 mt-3">
+
+                <table id="orderTable" class="table table-bordered  table-hover ">
+                    <thead class="table-dark">
+                    <tr>
+                        <td>Item Ud</td>
+                        <td>Description</td>
+                        <td>Price</td>
+                        <td>Qty</td>
+                        <td>Total</td>
+                    </tr>
+                    </thead>
+
+                    <tbody class="table-success overflow-y-scroll">
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <!------------------------------Order form End----------------------------------->
+
+</main>
+
+<!--------------------------- Home End   ---------------------------------------->
+
+
+
+<script src="assets/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/PageController.js"></script>
+<script type="module" src="controller/DashBoardController.js"></script>
+</body>
+</html>
