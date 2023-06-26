@@ -18,12 +18,13 @@
 .row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .col{
     width: max-content;
     padding: 0 15px;
+    margin: 20px;
 }
 
 .footerItem{
@@ -112,7 +113,29 @@
 }
 
 .developDetails{
-    text-align: center;
+    margin: 20px;
     width: max-content;
     color: #bbbbbb!important;
+}
+.developDetails>div{
+    text-align: center;
+}
+
+.developDetails>h4{
+    color: white;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 18px;
+    position: relative;
+}
+
+.developDetails>h4::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
 }
