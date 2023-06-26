@@ -16,8 +16,8 @@
     position: relative;
     width: 50%;
     /*background: rgba( 0,0,0,0.3);*/
-    animation: moveDown 1s linear forwards;
-    opacity: 0;
+    /*animation: moveDown 1s linear forwards;*/
+    /*opacity: 0;*/
 }
 
 

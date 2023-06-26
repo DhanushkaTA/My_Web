@@ -1,6 +1,7 @@
 header{
     /*background-color: #262626;*/
     background-color: black;
+    position: relative;
 }
 
 li{
@@ -22,7 +23,22 @@ header a{
 .logo a{
     font-family: 'Anton', sans-serif;
     font-size: 60px;
+
 }
+
+.logo{
+    /*border: 2px solid white;*/
+    height: 50px;
+    width: 50px;
+}
+
+.logo>img{
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-position:center;
+}
+
 
 .links li>a:hover ,.dropdown_menu li>a:hover{
     color: #DD0707;
@@ -44,6 +60,7 @@ header{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .navbar .links{

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tahrindu Dhanushka Abeywickrama">
     <meta name="description" content="This is my web site.I'm first year student
@@ -20,8 +20,11 @@
 
     <title>Tharindu Dhanushka</title>
 
+    <link rel="icon" type="image/x-icone" href="assets/img/logo/Logo.ico">
+
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/nav_bar.css">
+    <link rel="stylesheet" href="assets/css/nav_bar2.css">
+<!--    <link rel="stylesheet" href="assets/css/nav_bar.css">-->
     <link rel="stylesheet" href="assets/css/logo.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/title.css">
@@ -36,7 +39,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:ital,wght@0,400;1,900&family=Playfair+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        .about,.resume{
+            overflow: hidden;
+        }
         body{
             margin: 0;
             padding: 0;
@@ -54,35 +69,59 @@
 </head>
 <body>
 
+<!--<header>-->
+<!--  <nav class="navbar">-->
+<!--    <div class="logo" >-->
+<!--&lt;!&ndash;      <a href="#home" >&ndash;&gt;-->
+<!--&lt;!&ndash;          &ndash;&gt;-->
+<!--&lt;!&ndash;      </a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <img src="assets/img/logo/Logo2.png">-->
+<!--    </div>-->
+
+<!--    <ul class="links">-->
+<!--        <li><a href="#home">Home</a></li>-->
+<!--        <li><a href="#about">About</a></li>-->
+<!--        <li><a href="#service">Services</a></li>-->
+<!--        <li><a href="#resume">Resume</a></li>-->
+<!--        <li><a href="#projects">Projects</a></li>-->
+<!--        <li><a href="#">Gallery</a></li>-->
+<!--        <li><a href="#contact">Contacts</a></li>-->
+<!--    </ul>-->
+<!--    <div class="toggle_btn">-->
+<!--        <i class="fa-solid fa-bars"></i>-->
+<!--    </div>-->
+
+<!--    <div class="dropdown_menu ">-->
+<!--        <li><a href="#home">Home</a></li>-->
+<!--        <li><a href="#about">About</a></li>-->
+<!--        <li><a href="#service">Services</a></li>-->
+<!--        <li><a href="#resume">Resume</a></li>-->
+<!--        <li><a href="#projects">Projects</a></li>-->
+<!--        <li><a href="#">Gallery</a></li>-->
+<!--        <li><a href="#contact">Contacts</a></li>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</header>-->
 <header>
-  <nav class="navbar">
-    <div class="logo" >
-      <a href="#home" >TDA.</a>
-    </div>
-
-    <ul class="links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#service">Services</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#contact">Contacts</a></li>
-    </ul>
-    <div class="toggle_btn">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-
-    <div class="dropdown_menu ">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#service">Services</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#contact">Contacts</a></li>
-    </div>
-  </nav>
+    <input type="checkbox" id="check">
+    <section class="navbar">
+        <div class="logo">
+            <img src="assets/img/logo/Logo2.png">
+        </div>
+        <ol class="navItem">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ol>
+        <label for="check" class="fa-solid fa-bars" id="toggle_btn"></label>
+    </section>
 </header>
 <main>
 
@@ -146,39 +185,48 @@
 
     <section>
 
-        <section class="about" id="about">
-            <div class="imgCv">
-                <img src="assets/img/cv_photo.png">
+        <section  id="about">
+
+            <div class="title">
+                <h1>About</h1>
+            </div>
+            <div class="about">
+
+                <div class="imgCv" >
+                    <img src="assets/img/cv_photo.png">
+                </div>
+
+                <!--            <div class="title r">-->
+                <!--                <h1>About</h1>-->
+                <!--            </div>-->
+
+                <div class="detailsContainer" >
+                    <p class="details">
+                        Hello! My name is <span>Tharindu Dhanushka Abeywickrama</span>.I'm first year student
+                        at IJSE(Institute of Software Engineering).
+                        I'm currently learning more about Software development and Web development.
+                        I like to improve my skills with working on project.
+                        Also I have knowledge web application design and mobile application design.
+                        I like to work as freelancer UI/UX designer and web developer.
+                    </p>
+
+                    <p>
+                        Here are a few technologies I’ve been working with recently:
+                    </p>
+
+                    <ul class="plList">
+                        <li>Java</li>
+                        <li>JavaFx</li>
+                        <li>MySQL</li>
+                        <li>Hibernate</li>
+                        <li>CSS</li>
+                        <li>HTML</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
             </div>
 
-<!--            <div class="title r">-->
-<!--                <h1>About</h1>-->
-<!--            </div>-->
-
-            <div class="detailsContainer">
-                <p class="details">
-                    Hello! My name is <span>Tharindu Dhanushka Abeywickrama</span>.I'm first year student
-                    at IJSE(Institute of Software Engineering).
-                    I'm currently learning more about Software development and Web development.
-                    I like to improve my skills with working on project.
-                    Also I have knowledge web application design and mobile application design.
-                    I like to work as freelancer UI/UX designer and web developer.
-                </p>
-
-                <p>
-                    Here are a few technologies I’ve been working with recently:
-                </p>
-
-                <ul class="plList">
-                    <li>Java</li>
-                    <li>JavaFx</li>
-                    <li>MySQL</li>
-                    <li>Hibernate</li>
-                    <li>CSS</li>
-                    <li>HTML</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
         </section>
 
         <section class="service" id="service">
@@ -188,7 +236,7 @@
                     <h1>Service</h1>
                 </div>
                 <div class="cardContainer">
-                    <div class="card">
+                    <div class="card" >
                         <div>
                             <h2>
                                 Web Development
@@ -271,7 +319,7 @@
 
             <div class="timeLine">
 
-                <div class="container-timeLine left">
+                <div class="container-timeLine left " data-aos="fade-right">
                     <div class="point"></div>
                     <div class="text-box">
                         <h2>O/L (2015)</h2>
@@ -283,7 +331,7 @@
                     </div>
                 </div>
 
-                <div class="container-timeLine right">
+                <div class="container-timeLine right" data-aos="fade-left">
                     <div class="point"></div>
                     <div class="text-box">
                         <h2>A/L (2018)</h2>
@@ -295,7 +343,7 @@
                     </div>
                 </div>
 
-                <div class="container-timeLine left">
+                <div class="container-timeLine left" data-aos="fade-right">
                     <div class="point"></div>
                     <div class="text-box">
                         <h2>GDSE</h2>
@@ -328,7 +376,7 @@
 
             <div class="projectContainer">
                 <!---------------Card 01----------------->
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="500">
 
                     <div class="iconContainer">
                         <a title="Demo" href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square icon"></i></a>
@@ -342,6 +390,10 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/car_rent.png" title="image" alt="image">
+                    </div>
+
 
                     <ul class="lanList">
                         <li>Java</li>
@@ -353,7 +405,7 @@
 
                 <!---------------Card 02----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="700">
 
                     <div class="iconContainer">
                         <a title="Demo" href="" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square icon"></i></a>
@@ -367,6 +419,10 @@
                             Hostel Management System
                         </h3>
                     </div>
+                    
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/hostel.png" title="image" alt="image">
+                    </div>
 
                     <ul class="lanList">
                         <li>Java</li>
@@ -379,7 +435,7 @@
 
                 <!---------------Card 03----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="900">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://drive.google.com/drive/folders/1v8TK5sGn1hUrpwZIEEZf5BPjZQsj8_wM?usp=sharing"
@@ -397,6 +453,10 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/hostel.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                     </ul>
@@ -404,7 +464,7 @@
 
                 <!---------------Card 04----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="500">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/My_Web-Assigment2-/" target="_blank">
@@ -421,6 +481,10 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-2.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                     </ul>
@@ -428,7 +492,7 @@
 
                 <!---------------Card 05----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="700">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/Assigment03-IT/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square icon"></i></a>
@@ -438,19 +502,24 @@
                     </div>
 
                     <div class="cardTitle">
-                        <h3>
+                        <h3 class="glitchText" data-text="Assigment 03 -IT">
                             Assigment 03 -IT
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-3.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
+                        <li>CSS</li>
                     </ul>
                 </div>
 
                 <!---------------Card 06----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="900">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/Assignment04-IT/" target="_blank">
@@ -467,15 +536,20 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-4.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
+                        <li>CSS</li>
                     </ul>
                 </div>
 
 
                 <!---------------Card 07----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="500">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/Assignment05-IT/" target="_blank">
@@ -492,6 +566,10 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-5.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                         <li>CSS</li>
@@ -500,7 +578,7 @@
 
                 <!---------------Card 08----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="700">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/POS-System-Assigment_06-/" target="_blank">
@@ -517,16 +595,21 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-11.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JS</li>
+                        <li>Boostrap</li>
                     </ul>
                 </div>
 
                 <!---------------Card 09----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="900">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/Assignment07-IT/#" target="_blank">
@@ -543,6 +626,72 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-11.png" title="image" alt="image">
+                    </div>
+
+                    <ul class="lanList">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JS</li>
+                        <li>Boostrap</li>
+                    </ul>
+                </div>
+
+
+                <!---------------Card 09----------------->
+
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="900">
+
+                    <div class="iconContainer">
+                        <a title="Demo" href="https://dhanushkata.github.io/Assigment08-IT/" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square icon"></i>
+                        </a>
+                        <a title="Github" href="https://github.com/DhanushkaTA/Assigment08-IT.git" target="_blank">
+                            <i class="fa-brands fa-github icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="cardTitle">
+                        <h3>
+                            Assigment 08 -IT (Animation Js)
+                        </h3>
+                    </div>
+
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-8.png" title="image" alt="image">
+                    </div>
+
+                    <ul class="lanList">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JS</li>
+                    </ul>
+                </div>
+
+                <!---------------Card 09----------------->
+
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="900">
+
+                    <div class="iconContainer">
+                        <a title="Demo" href="https://dhanushkata.github.io/Assigment09_IT/" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square icon"></i>
+                        </a>
+                        <a title="Github" href="https://github.com/DhanushkaTA/Assigment09_IT.git" target="_blank">
+                            <i class="fa-brands fa-github icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="cardTitle">
+                        <h3>
+                            Assigment 09 -IT (Animation Js)
+                        </h3>
+                    </div>
+
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-9.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                         <li>CSS</li>
@@ -552,7 +701,7 @@
 
                 <!---------------Card 10----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="500">
 
                     <div class="iconContainer">
                         <a title="Demo" href="https://dhanushkata.github.io/Assignment10-IT/" target="_blank">
@@ -569,6 +718,10 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-10.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                         <li>CSS</li>
@@ -578,7 +731,7 @@
 
                 <!---------------Card 11----------------->
 
-                <div class="cardP">
+                <div class="cardP" data-aos="zoom-in" data-aos-delay="700">
 
                     <div class="iconContainer">
                         <a title="Demo" href="assets/Assigments/POS/Assigment_11/index.html" target="_blank">
@@ -595,10 +748,15 @@
                         </h3>
                     </div>
 
+                    <div class="imgWrapper">
+                        <img src="assets/img/assigmentImg/Assigment-11.png" title="image" alt="image">
+                    </div>
+
                     <ul class="lanList">
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JS</li>
+                        <li>Boostrap</li>
                     </ul>
                 </div>
 
@@ -1750,19 +1908,52 @@
 
 </main>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    const toggleBtn=document.querySelector('.toggle_btn')
-    const toggleBtnIcon=document.querySelector('.toggle_btn i')
-    const dropDownMenu=document.querySelector('.dropdown_menu')
+    AOS.init();
+</script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '100px',
+        duration: 1000,
+        delay: 400
+    });
 
-    toggleBtn.onclick =function (){
-        dropDownMenu.classList.toggle('open')
-        const isOpen=dropDownMenu.classList.contains('open')
+    ScrollReveal().reveal('.title', { delay: 500 ,origin: 'left'});
+    ScrollReveal().reveal('.imgCv ,.title', { delay: 600 ,origin: 'left'});
+    ScrollReveal().reveal('.detailsContainer', { delay: 700 ,origin: 'right'});
+    ScrollReveal().reveal('.cardContainer .card', { delay: 500 ,origin: 'bottom',interval:200});
+</script>
+<script>
+    // const toggleBtn=document.querySelector('.toggle_btn')
+    // const toggleBtnIcon=document.querySelector('.toggle_btn i')
+    // const dropDownMenu=document.querySelector('.dropdown_menu')
+    //
+    // toggleBtn.onclick =function (){
+    //     dropDownMenu.classList.toggle('open')
+    //     const isOpen=dropDownMenu.classList.contains('open')
+    //
+    //     toggleBtnIcon.classList=isOpen
+    //     ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+    // }
+    // const toggleBtn=document.querySelector('#toggle_btn')
 
-        toggleBtnIcon.classList=isOpen
-        ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
-    }
+</script>
 
+<script >
+    window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0)
+    })
+
+    // let menu = document.querySelector('#menu-icon');
+    // let navlist = document.querySelector('.navlist');
+    // menu.onclick = () => {
+    //     menu.classList.toggle('bx-x');
+    //     navlist.classList.toggle('active');
+    // }
 </script>
 
 </body>
