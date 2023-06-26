@@ -25,9 +25,9 @@ export class OrderController {
             this.handleSaveOrder();
         });
 
-        $('#itemQtyOrder').on('keyup', () => {
-            this.handleQty();
-        });
+        // $('#itemQtyOrder').on('keyup', () => {
+        //     this.handleQty();
+        // });
         $('#resetBtn').on('click', () => {
             this.handleClearFunction();
         });
@@ -42,6 +42,9 @@ export class OrderController {
         });
         $('#conformBtn').on('click', () => {
            this.handleConformOrder();
+        });
+        $('#discountTxt').on('keyup', () => {
+           this.handleDiscount();
         });
 
         this.handleTableClickEvent();
@@ -428,6 +431,14 @@ export class OrderController {
         });
         $('#total').text(tot);
 
+        let discountValue=(+$('#total').text()) * ((+$('#discountTxt').val())/100);
+        console.log(discountValue);
+        let finalTot=(+$('#total').text())-discountValue;
+        console.log(finalTot)
+        $('#fTotal').text(finalTot);
+    }
+
+    handleDiscount(){
         let discountValue=(+$('#total').text()) * ((+$('#discountTxt').val())/100);
         console.log(discountValue);
         let finalTot=(+$('#total').text())-discountValue;
