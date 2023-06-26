@@ -6,6 +6,12 @@
 
 }
 
+.title>h1>span{
+    color: crimson!important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: crimson;
+}
+
 .imgCv{
     width: 25vw;
     height: 33vw;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tahrindu Dhanushka Abeywickrama">
     <meta name="description" content="This is my web site.I'm first year student
@@ -188,7 +188,7 @@
         <section  id="about">
 
             <div class="title">
-                <h1>About</h1>
+                <h1>About <span>Me</span></h1>
             </div>
             <div class="about">
 
@@ -454,7 +454,7 @@
                     </div>
 
                     <div class="imgWrapper">
-                        <img src="assets/img/assigmentImg/hostel.png" title="image" alt="image">
+                        <img src="assets/img/logo/Logo2.png" title="image" alt="image" >
                     </div>
 
                     <ul class="lanList">
@@ -1756,45 +1756,47 @@
                 <h1>Get in Touch!</h1>
             </div>
             <div class="wrapperBox">
+
                 <!------Message------>
                 <div class="form box">
-                    <h2>Sent your message</h2>
+                    <h2 class="subTitel">Sent your message</h2>
 
-                    <form class="formWrapper">
+                    <form class="formWrapper" action="mailto:dhnaushka999ta@gmail.com" method="post">
                         <div class="row1">
                            <div class="inputContainer">
                                <label for="fName">First Name</label>
-                               <input type="text" id="fName" >
+                               <input type="text" name="name" id="fName" required>
                            </div>
 
                             <div class="inputContainer">
                                 <label for="lName">Last Name</label>
-                                <input type="text" id="lName" >
+                                <input type="text" name="Name" id="lName" required>
                             </div>
                         </div>
 
                         <div class="row2">
                             <div class="inputContainer">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" >
+                                <input type="email" name="email" id="email" required>
                             </div>
 
                             <div class="inputContainer">
                                 <label for="projects">Phone Number</label>
-                                <input type="tel" id="phoneNum" >
+                                <input type="tel" name="tele" id="phoneNum" required>
                             </div>
                         </div>
 
                         <div class="row3">
                             <div class="inputContainer">
                                 <label for="message">Message</label>
-                                <textarea id="message" placeholder="write your message here..."></textarea>
+                                <textarea id="message" name="mag" placeholder="write your message here..." ></textarea>
                             </div>
                         </div>
 
                         <div class="row4">
                             <div class="inputContainer">
                                 <input type="submit" value="Submit" id="submitBtn">
+<!--                                <button type="submit" value="Submit" id="submitBtn">Submit</button>-->
                             </div>
                         </div>
 
@@ -1826,12 +1828,12 @@
 
                         <div>
                             <span><i class="fa-solid fa-paper-plane"></i></span>
-                            <a href="mailto:dhnaushka999ta@gmail.com">dhnaushka999ta@gmail.com</a>
+                            <a id="emailLink" href="mailto:dhnaushka999ta@gmail.com">dhnaushka999ta@gmail.com</a>
                         </div>
 
                         <div>
                             <span><i class="fa-solid fa-phone"></i></span>
-                            <a href="tel:+94702037168">+94 702 037 168</a>
+                            <a id="tel" class="aHover" href="tel:+94702037168">+94 702 037 168</a>
                         </div>
 
                         <div class="socialMediaItem ">

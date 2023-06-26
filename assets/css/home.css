@@ -245,6 +245,35 @@
 
 @media all and (max-width: 375px){
     .txtContainer{
-        bottom: -25%;
+        /*bottom: -25%;*/
+        top:10%;
     }
+
+    /*.first h1{*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*    margin-bottom: auto;*/
+    /*}*/
+
+    /*.sec h1{*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    justify-content: center*/
+    /*    margin-bottom: auto;*/
+    /*}*/
+
+    /*.shineText{*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*    margin-bottom: auto;*/
+    /*}*/
+
+    /*.home{*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*}*/
+
 }
