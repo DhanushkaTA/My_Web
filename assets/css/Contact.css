@@ -27,12 +27,14 @@
     color: rgba(255, 255, 255, 0.65);
 }
 
-#tel{
+#tel,#emailLink{
     color: white;
+    text-decoration: none;
 }
 
 #emailLink:hover,#tel:hover{
     color: crimson;
+    text-decoration: none;
 }
 
 .info>h3{
